@@ -1,15 +1,15 @@
 # EmployeeManagement
-An Employee Management System that performs CRUD operations.
+# An Employee Management System that performs CRUD operations.
 
-# Fetch the latest project to local system
-# Switch to the project directory
-# Open Program.cs
-# Click on Start Button
+## Fetch the latest project to local system
+## Switch to the project directory
+## Open Program.cs
+## Click on Start Button
 
-[#] Added authorization and authentication
+# Added authorization and authentication
 
-# Get all Employees
-# Add New Employee
-# Update an existing Employee
-# Delete an Employee
+## Get all Employees
+## Add New Employee
+## Update an existing Employee
+## Delete an Employee
 
