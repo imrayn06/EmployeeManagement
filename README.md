@@ -8,6 +8,40 @@
 ## Open Program.cs
 ## Click on Start Button
 
+# Project Structure
+Directory structure:
+└── imrayn06-employeemanagement/
+    ├── README.md
+    ├── EmployeeManagement.sln
+    └── EmployeeManagement/
+        ├── appsettings.Development.json
+        ├── appsettings.json
+        ├── EmployeeManagement.csproj
+        ├── EmployeeManagement.http
+        ├── Program.cs
+        ├── Authetication/
+        │   ├── AuthService.cs
+        │   └── JwtSettings.cs
+        ├── Controllers/
+        │   ├── EmployeeController.cs
+        │   └── LoginController.cs
+        ├── Data/
+        │   └── ApplicationDbContext.cs
+        ├── Migrations/
+        │   ├── 20250315112906_ini.cs
+        │   ├── 20250315112906_ini.Designer.cs
+        │   ├── 20250315113036_initial.cs
+        │   ├── 20250315113036_initial.Designer.cs
+        │   └── ApplicationDbContextModelSnapshot.cs
+        ├── Models/
+        │   └── Employee.cs
+        ├── Properties/
+        │   └── launchSettings.json
+        └── Services/
+            ├── EmployeeService.cs
+            └── IEmployeeService.cs
+
+
 # Added authorization and authentication
 
 ## Get all Employees
