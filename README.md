@@ -1,63 +1,103 @@
-# EmployeeManagement
-# An Employee Management System that performs CRUD operations.
+# Employee Management System API
 
-![image](https://github.com/user-attachments/assets/9f396497-cf1b-4e1e-aae1-e77d57ffea82)
+## Overview
 
-## Fetch the latest project to local system
-## Switch to the project directory
-## Open Program.cs
-## Click on Start Button
+This is a RESTful API built using .NET 9, designed to manage employee data in an organization. It supports CRUD operations, follows SOLID principles, and includes JWT authentication for secure access.
 
-# Project Structure
+## Features
 
-Directory structure:
-└── imrayn06-employeemanagement/
-    ├── README.md
-    ├── EmployeeManagement.sln
-    └── EmployeeManagement/
-        ├── appsettings.Development.json
-        ├── appsettings.json
-        ├── EmployeeManagement.csproj
-        ├── EmployeeManagement.http
-        ├── Program.cs
-        ├── Authetication/
-        │   ├── AuthService.cs
-        │   └── JwtSettings.cs
-        ├── Controllers/
-        │   ├── EmployeeController.cs
-        │   └── LoginController.cs
-        ├── Data/
-        │   └── ApplicationDbContext.cs
-        ├── Migrations/
-        │   ├── 20250315112906_ini.cs
-        │   ├── 20250315112906_ini.Designer.cs
-        │   ├── 20250315113036_initial.cs
-        │   ├── 20250315113036_initial.Designer.cs
-        │   └── ApplicationDbContextModelSnapshot.cs
-        ├── Models/
-        │   └── Employee.cs
-        ├── Properties/
-        │   └── launchSettings.json
-        └── Services/
-            ├── EmployeeService.cs
-            └── IEmployeeService.cs
+- **CRUD Operations**: Create, Read, Update, Delete employees.
+- **Authentication**: JWT-based authentication for securing endpoints.
+- **Entity Framework Core**: SQL database integration with EF Core.
+- **Dependency Injection**: Modular architecture for maintainability.
+- **SOLID Principles**: Ensures a scalable and maintainable codebase.
+- **Swagger Documentation**: Auto-generated API documentation.
 
+## Technologies Used
 
-# Added authorization and authentication
+- .NET 9 Web API
+- C#
+- Entity Framework Core
+- SQL Server
+- JWT Authentication
+- Swagger (Swashbuckle)
 
-## Get all Employees
+## Project Structure
 
-![image](https://github.com/user-attachments/assets/277e27b6-dfa6-490c-bf7a-29e4fd58ad75)
+```
+EmployeeManagementAPI/
+│-- Controllers/        # API Controllers
+│-- EmployeeServices/           # Business Logic Layer
+│-- EmployeesRepositories/       # Data Access Layer
+│-- EmployeeModels/             # Data Models
+│-- DTOs/               # Data Transfer Objects (optional)
+│-- Data/               # DbContext and Migrations
+│-- Program.cs          # Application Entry Point
+│-- appsettings.json    # Configuration Settings
+```
 
-## Add New Employee
+## Installation
 
-![image](https://github.com/user-attachments/assets/d0985e3e-1b32-400c-9465-478fe930beeb)
+### Prerequisites
 
-## Update an existing Employee
+Ensure you have the following installed:
 
-![image](https://github.com/user-attachments/assets/ae6511e0-57d6-44b1-9d4f-e9de58e99ed9)
+- .NET 9 SDK
+- SQL Server 
+- Entity Framework Core
 
-## Delete an Employee
+### Setup Instructions
 
-![image](https://github.com/user-attachments/assets/8d55296e-f8dd-4b98-b316-f1e7721a0bf8)
+Clone the repository:
 
+```sh
+git clone https://github.com/imrayn06/Employee_management
+cd EmployeeManagementAPI
+```
+
+Install required dependencies:
+
+```sh
+dotnet restore
+```
+
+Add EF Core design package:
+
+```sh
+dotnet add package Microsoft.EntityFrameworkCore.Design
+```
+
+Apply Migrations:
+
+```sh
+dotnet ef migrations add InitialCreate
+```
+
+```sh
+dotnet ef database update
+```
+
+Run the API:
+
+```sh
+dotnet run
+```
+
+Open Swagger UI at:
+
+```
+http://localhost:5103/swagger/index.html
+```
+
+## API Endpoints
+
+### Authentication
+
+- **POST** `/api/Auth/login` - Authenticate and get JWT token
+
+### Employee Management
+
+- **GET** `/api/Employees` - Get all Employees
+- **POST** `/api/Employees` - Create a new employee
+- **PUT** `/api/Employees/{id}` - Update an employee
+- **DELETE** `/api/Employees/{id}` - Delete an employee
